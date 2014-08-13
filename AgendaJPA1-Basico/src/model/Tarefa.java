@@ -2,14 +2,17 @@ package model;
 
 import java.util.Calendar;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 public class Tarefa {
-
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String descricao;
 	private boolean finalizado;
+	@Temporal(TemporalType.DATE)
+	@Column(name="data_finalizacao", nullable = true)
 	private Calendar dataFinalizacao;
 	  
 	  
