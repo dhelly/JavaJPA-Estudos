@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Tarefa {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY) // se o strategy ele cria a sequencia como uma tabela
 	private Long id;
 	private String descricao;
 	private boolean finalizado;
